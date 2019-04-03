@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.eclipse.scout</groupId>
+    <artifactId>maven_rt_plugin_config-master</artifactId>
+    <version>3.1.0</version>
+    <relativePath></relativePath>
+  </parent>
+
+  <artifactId>contacts</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Contacts Application Parent Module</name>
+
+  <properties>
+    <org.eclipse.scout.contacts.version>${project.version}</org.eclipse.scout.contacts.version>
+    <jdk.source.version>1.8</jdk.source.version>
+    <org.eclipse.scout.rt.version>9.0.0.009_Simrel_2019_03</org.eclipse.scout.rt.version>
+  </properties>
+
+  <modules>
+    <module>../contacts.shared</module>
+    <module>../contacts.server</module>
+    <module>../contacts.client</module>
+    <module>../contacts.server.app.war</module>
+    <module>../contacts.ui.html</module>
+    <module>../contacts.ui.html.app.war</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- Scout Dependencies -->
+      <dependency>
+        <groupId>org.eclipse.scout.rt</groupId>
+        <artifactId>org.eclipse.scout.rt</artifactId>
+        <version>${org.eclipse.scout.rt.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- Application Dependencies -->
+      <dependency>
+        <groupId>org.eclipse.scout</groupId>
+        <artifactId>contacts.client</artifactId>
+        <version>${org.eclipse.scout.contacts.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.scout</groupId>
+        <artifactId>contacts.shared</artifactId>
+        <version>${org.eclipse.scout.contacts.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.scout</groupId>
+        <artifactId>contacts.server</artifactId>
+        <version>${org.eclipse.scout.contacts.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.scout</groupId>
+        <artifactId>contacts.ui.html</artifactId>
+        <version>${org.eclipse.scout.contacts.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
