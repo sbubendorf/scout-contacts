@@ -109,6 +109,10 @@ public class PersonTablePage extends AbstractPageWithTable<Table> {
 			return getColumnSet().getColumnByClass(PhoneColumn.class);
 		}
 
+		public PictureUrlColumn getPictureUrlColumn() {
+			return getColumnSet().getColumnByClass(PictureUrlColumn.class);
+		}
+
 		public OrganizationColumn getOrganizationColumn() {
 			return getColumnSet().getColumnByClass(OrganizationColumn.class);
 		}
@@ -258,6 +262,20 @@ public class PersonTablePage extends AbstractPageWithTable<Table> {
 			protected int getConfiguredWidth() {
 				return 100;
 			}
+		}
+
+		@Order(10000)
+		public class PictureUrlColumn extends AbstractStringColumn {
+			@Override
+			protected String getConfiguredHeaderText() {
+				return TEXTS.get("PictureURL");
+			}
+
+			@Override
+			protected boolean getConfiguredVisible() {
+				return false;
+			}
+
 		}
 		
 		private class PersonFormListener implements FormListener {

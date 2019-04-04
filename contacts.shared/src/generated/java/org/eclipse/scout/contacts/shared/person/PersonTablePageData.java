@@ -61,6 +61,7 @@ public class PersonTablePageData extends AbstractTablePageData {
 		public static final String mobile = "mobile";
 		public static final String email = "email";
 		public static final String organization = "organization";
+		public static final String pictureUrl = "pictureUrl";
 		private String m_personId;
 		private String m_firstName;
 		private String m_lastName;
@@ -70,6 +71,7 @@ public class PersonTablePageData extends AbstractTablePageData {
 		private String m_mobile;
 		private String m_email;
 		private String m_organization;
+		private String m_pictureUrl;
 
 		public String getPersonId() {
 			return m_personId;
@@ -141,6 +143,14 @@ public class PersonTablePageData extends AbstractTablePageData {
 
 		public void setOrganization(String newOrganization) {
 			m_organization = newOrganization;
+		}
+
+		public String getPictureUrl() {
+			return m_pictureUrl;
+		}
+
+		public void setPictureUrl(String newPictureUrl) {
+			m_pictureUrl = newPictureUrl;
 		}
 	}
 }

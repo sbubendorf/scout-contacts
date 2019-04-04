@@ -93,10 +93,6 @@ public class PersonFormData extends AbstractFormData {
 		return getFieldByClass(Picture.class);
 	}
 
-	public PictureUrl getPictureUrl() {
-		return getFieldByClass(PictureUrl.class);
-	}
-
 	public Position getPosition() {
 		return getFieldByClass(Position.class);
 	}
@@ -176,11 +172,6 @@ public class PersonFormData extends AbstractFormData {
 	}
 
 	public static class Picture extends AbstractUrlImageFieldData {
-
-		private static final long serialVersionUID = 1L;
-	}
-
-	public static class PictureUrl extends AbstractValueFieldData<String> {
 
 		private static final long serialVersionUID = 1L;
 	}
