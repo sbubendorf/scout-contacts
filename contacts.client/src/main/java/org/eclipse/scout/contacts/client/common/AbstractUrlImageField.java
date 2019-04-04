@@ -32,7 +32,7 @@ public class AbstractUrlImageField extends AbstractImageField {
 	@FormData
 	public void setUrl(String url) {
 		this.url = url;
-		//updateImage();
+		updateImage();
 	}
 	
 	@Override
@@ -51,12 +51,18 @@ public class AbstractUrlImageField extends AbstractImageField {
 			setImage(null);
 		}
 		else {
+			URL urlNew = null;
 			try {
-				setImage(IOUtility.readFromUrl(new URL((String) url)));
+				if ( url.startsWith("http") ) {
+					urlNew = new URL( (String) url);
+				} else {
+					urlNew = new URL( new URL("file:"), url);
+				}
+				setImage(IOUtility.readFromUrl(urlNew));
 				setAutoFit(true);
 			}
 			catch (Exception e) {
-				addErrorStatus(new Status(TEXTS.get("FailedToAccessImageFromUrl"), IStatus.WARNING));
+				addErrorStatus(new Status(TEXTS.get("FailedToAccessImageFromUrl") + " : " + urlNew.toString(), IStatus.WARNING));
 			}
 		}
 		getForm().touch();

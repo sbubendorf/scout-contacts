@@ -118,7 +118,7 @@ public class PersonForm extends AbstractForm {
 	public WorkBox getWorkBox() {
 		return getFieldByClass(WorkBox.class);
 	}
-
+	
 	public FirstNameField getFirstNameField() {
 		return getFieldByClass(FirstNameField.class);
 	}
@@ -201,26 +201,6 @@ public class PersonForm extends AbstractForm {
 			public class PictureField extends AbstractUrlImageField {
 			}
 
-			@Order(20)
-			public class PictureUrlField extends AbstractStringField {
-				@Override
-				protected String getConfiguredLabel() {
-					return TEXTS.get("PictureURL");
-				}
-				@Override
-				protected boolean getConfiguredVisible() {
-					return true;
-				}
-				@Override
-				protected boolean getConfiguredEnabled() {
-					return false;
-				}
-				@Override
-				protected byte getConfiguredLabelPosition() {
-					return LABEL_POSITION_TOP;
-				}
-			}
-			
 			@Order(2000)
 			public class FirstNameField extends AbstractStringField {
 				@Override

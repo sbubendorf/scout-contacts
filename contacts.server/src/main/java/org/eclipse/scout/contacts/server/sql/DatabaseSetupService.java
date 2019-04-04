@@ -93,7 +93,6 @@ public class DatabaseSetupService implements IDataStoreService {
         SQL.insert(SQLs.PERSON_INSERT_SAMPLE + SQLs.PERSON_VALUES_27);
         SQL.insert(SQLs.PERSON_INSERT_SAMPLE + SQLs.PERSON_VALUES_28);
         SQL.insert(SQLs.PERSON_INSERT_SAMPLE + SQLs.PERSON_VALUES_29);
-        SQL.insert(SQLs.PERSON_INSERT_SAMPLE + SQLs.PERSON_VALUES_30);
         // tag::service[]
         LOG.info("Database table 'PERSON' populated with sample data");
       }
