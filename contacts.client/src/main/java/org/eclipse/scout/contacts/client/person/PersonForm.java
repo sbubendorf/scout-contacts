@@ -1,7 +1,5 @@
 package org.eclipse.scout.contacts.client.person;
 
-import java.util.regex.Pattern;
-
 import org.eclipse.scout.contacts.client.common.AbstractEmailField;
 import org.eclipse.scout.contacts.client.common.AbstractUrlImageField;
 import org.eclipse.scout.contacts.client.common.CountryLookupCall;
